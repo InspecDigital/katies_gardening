@@ -1,7 +1,9 @@
 {
   "modules" : {
+    "main" : "js/amd/main/views/main.view"
   },
   "routes" : {
+    "" : "main"
   },
   "services" : {
     "default" : {
