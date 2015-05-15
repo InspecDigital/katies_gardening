@@ -1,0 +1,29 @@
+<div class="container products">
+  <div class="row">
+    {{#products}}
+      <div class="col-md-4 product" id="product{{id}}">
+        <div class="product-inner">
+          <div class="index">
+            <span class="marker">#</span>
+            <span class="count"></span>
+          </div>
+          <div class="product-img">
+            <img src="http://store.bbcomcdn.com{{white450PxImgUrl}}" class="img-responsive bw" alt="{{{name}}} product image">
+          </div>
+          <div class="product-brand">
+            {{{brandName}}}
+          </div>
+          <div class="product-name">
+            {{{name}}}
+          </div>
+          <div class="product-brief-description">
+            {{{briefDescription}}}
+          </div>
+          <div class="product-description">
+            {{{description}}}
+          </div>
+        </div>
+      </div>
+    {{/products}}
+  </div>
+</div>

@@ -1,0 +1,11 @@
+{
+  "modules" : {
+  },
+  "routes" : {
+  },
+  "services" : {
+    "default" : {
+      "host" : ""
+    }
+  }
+}

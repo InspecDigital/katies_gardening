@@ -1,0 +1,33 @@
+/**
+ * @file fonts.css
+ * @author tonym
+ */
+
+/**
+ * Fonts
+ */
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/assets/fonts/ProximaNovaExCn.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/ProximaNovaExCn.eot?#iefix') format('embedded-opentype'),
+       url('/assets/fonts/ProximaNovaExCn.woff') format('woff'),
+       url('/assets/fonts/ProximaNovaExCn.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/assets/fonts/ProximaNovaExCn_Bold.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/ProximaNovaExCn_Bold.eot?#iefix') format('embedded-opentype'),
+       url('/assets/fonts/ProximaNovaExCn_Bold.woff') format('woff'),
+       url('/assets/fonts/ProximaNovaExCn_Bold.ttf')  format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Proxima Nova Super Bold';
+  src: url('/assets/fonts/ProximaNovaExCn_ExBold.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/ProximaNovaExCn_ExBold.eot?#iefix') format('embedded-opentype'),
+       url('/assets/fonts/ProximaNovaExCn_ExBold.woff') format('woff'),
+       url('/assets/fonts/ProximaNovaExCn_ExBold.ttf')  format('truetype');
+  font-weight: bold;
+}
