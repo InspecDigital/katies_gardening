@@ -72,6 +72,12 @@ define([
 
       // Event handlers go here
 
+      $(".morph").hover(function() {
+          $(".morph img").animate({ opacity: 0 }, 'slow');
+        }, function() {
+          $(".morph img").animate({ opacity: 1 }, 'slow');
+      });
+
       return this;
 
     }

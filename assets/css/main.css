@@ -23,10 +23,34 @@ body {
   display: inline-block;
   min-width: 100px;
   padding: 10px;
-  width: 20%;
+  width: 100%;
+}
+.carousel .img-responsive {
+  display: inline-block;
+}
+.carousel-control-image {
+  overflow: hidden;
+}
+.carousel-container {
+  padding: 0;
+}
+.carousel-control-image img {
+  float: right;
+  height: auto;
+  max-width: inherit;
+  opacity: 0.25;
+}
+.links a {
+  display: inline-block;
+  font-size: 2em;
+
 }
 .loading {
   text-align: center;
   font-size: 36px;
   margin-top: 60px;
+}
+.phone {
+  font-size: 2em;
+  margin-top: 10%;
 }
