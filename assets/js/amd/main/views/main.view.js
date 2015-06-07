@@ -36,7 +36,6 @@ define([
 
       this.fetchPosts({
         complete : function() {
-          console.log(self.posts);
           self.render();
         },
         error : function(e) {
