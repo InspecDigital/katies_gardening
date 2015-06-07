@@ -7,7 +7,7 @@
   },
   "services" : {
     "default" : {
-      "host" : ""
+      "host" : "/assets/app/lib/wordpress/wp-json/"
     }
   }
 }

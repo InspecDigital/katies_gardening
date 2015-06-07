@@ -32,7 +32,17 @@ define([
      */
     initialize : function(options) {
 
-      this.render();
+      var self = this;
+
+      this.fetchPosts({
+        complete : function() {
+          console.log(self.posts);
+          self.render();
+        },
+        error : function(e) {
+          console.log(e);
+        }
+      });
 
     },
 

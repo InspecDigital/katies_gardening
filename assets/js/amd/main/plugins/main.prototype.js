@@ -21,6 +21,22 @@ define([
 
   var Prototype = {
 
+    api : {
+      posts : 'posts'
+    },
+
+    fetchPosts : function(options) {
+
+      var _options = this.prepareOptions(options);
+
+      this.posts = new MainCollection();
+
+      this.posts.url = this.Navigation.getServiceLink(this.api.posts);
+
+      return this._fetchData('posts', _options);
+
+    },
+
     /**
      * Wrapper for _prepareOptions
      * Since options are always optional, use
@@ -33,7 +49,8 @@ define([
     prepareOptions : function(options) {
 
       var defaults = { reset : true,
-                       unshift : false };
+                       unshift : false,
+                       dataType : 'json' };
 
       return this._prepareOptions(defaults, options);
 
