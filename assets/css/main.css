@@ -40,6 +40,25 @@ body {
   max-width: inherit;
   opacity: 0.25;
 }
+
+.jumbotron {
+  background-image: url(../img/jumbotron.jpg);
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.jumbotron h1 {
+  color: white;
+  font-size: 6.4em;
+  text-align: center;
+  text-shadow: 3px 3px 8px #000000;
+}
+
+.jumbotron .btn {
+  background: #d3323a;
+}
+
 .links a {
   display: inline-block;
   font-size: 2em;
