@@ -36,7 +36,20 @@ define([
 
       this.fetchPosts({
         complete : function() {
-          self.render();
+          return null;
+        }
+      });
+
+      this.fetchMedia({
+        complete : function() {
+          self.fetchTerms({
+            complete : function() {
+              self.render();
+            },
+            error : function(e) {
+              console.log(e);
+            }
+          });
         },
         error : function(e) {
           console.log(e);
@@ -54,7 +67,15 @@ define([
 
       var self = this;
 
-      var body = mustache.render(mainTemplate);
+      var terms = this.terms.toJSON();
+
+      var media = this.media.toJSON();
+
+      var body;
+
+      media[0].active = true;
+
+      body = mustache.render(mainTemplate, { terms : terms, media : media });
 
       var _options = {
         partial : body,

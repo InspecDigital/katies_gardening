@@ -14,6 +14,7 @@
     </div>
   </div>
 </nav>
+
 <section class="gallery">
   <div class="container carousel-container">
     <div class="carousel slide" id="carousel" data-ride="carousel">
@@ -26,71 +27,22 @@
 
       <div class="carousel-inner" role="listbox">
 
-        <div class="item active">
-          <div class="container carousel-container">
-            <div class="row">
-              <div class="col-md-1">
-                <div class="carousel-control-image">
-                  <img src="/assets/img/house.after.jpg" alt="" class="img-responsive">
-                </div>
-              </div>
-              <div class="col-md-10 text-center">
-                <div class="morph" style="background:url(/assets/img/house.after.jpg) top center no-repeat;">
-                  <img src="/assets/img/house.before.jpg" class="img-responsive" alt="">
-                </div>
-              </div>
-              <div class="col-md-1">
-                <div class="carousel-control-image">
-                  <img src="/assets/img/house.after.jpg" alt="" class="img-responsive">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {{#media}}
 
-        <div class="item">
-          <div class="container carousel-container">
-            <div class="row">
-              <div class="col-md-1">
-                <div class="carousel-control-image">
-                  <img src="/assets/img/house.after.jpg" alt="" class="img-responsive">
-                </div>
-              </div>
-              <div class="col-md-10 text-center">
-                <div class="morph" style="background:url(/assets/img/house.after.jpg) top center no-repeat;">
-                  <img src="/assets/img/house.before.jpg" class="img-responsive" alt="">
-                </div>
-              </div>
-              <div class="col-md-1">
-                <div class="carousel-control-image">
-                  <img src="/assets/img/house.after.jpg" alt="" class="img-responsive">
+          <div class="item {{#active}}active{{/active}}">
+            <div class="container carousel-container">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                  <div>
+                    <img src="{{source}}" class="img-responsive" alt="">
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="item">
-          <div class="container carousel-container">
-            <div class="row">
-              <div class="col-md-1">
-                <div class="carousel-control-image">
-                  <img src="/assets/img/house.after.jpg" alt="" class="img-responsive">
-                </div>
-              </div>
-              <div class="col-md-10 text-center">
-                <div class="morph" style="background:url(/assets/img/house.after.jpg) top center no-repeat;">
-                  <img src="/assets/img/house.before.jpg" class="img-responsive" alt="">
-                </div>
-              </div>
-              <div class="col-md-1">
-                <div class="carousel-control-image">
-                  <img src="/assets/img/house.after.jpg" alt="" class="img-responsive">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {{/media}}
+
 
         <a href="#carousel" role="button" data-slide="prev" class="left carousel-control">
           <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -105,6 +57,15 @@
       </div>
     </div>
   </div>
+
+  <div>
+    <h1>Categories</h1>
+    {{#terms}}
+      <p>{{name}}</p>
+    {{/terms}}
+  </div>
+</section>
+
 </section>
 
 <footer>

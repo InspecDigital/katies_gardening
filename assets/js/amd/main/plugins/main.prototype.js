@@ -22,7 +22,21 @@ define([
   var Prototype = {
 
     api : {
-      posts : 'posts'
+      media : 'media',
+      posts : 'posts',
+      terms : 'taxonomies/category/terms'
+    },
+
+    fetchMedia : function(options) {
+
+      var _options = this.prepareOptions(options);
+
+      this.media = new MainCollection();
+
+      this.media.url = this.Navigation.getServiceLink(this.api.media);
+
+      return this._fetchData('media', _options);
+
     },
 
     fetchPosts : function(options) {
@@ -34,6 +48,18 @@ define([
       this.posts.url = this.Navigation.getServiceLink(this.api.posts);
 
       return this._fetchData('posts', _options);
+
+    },
+
+    fetchTerms : function(options) {
+
+      var _options = this.prepareOptions(options);
+
+      this.terms = new MainCollection();
+
+      this.terms.url = this.Navigation.getServiceLink(this.api.terms);
+
+      return this._fetchData('terms', _options);
 
     },
 
