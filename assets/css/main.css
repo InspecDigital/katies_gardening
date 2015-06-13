@@ -29,6 +29,15 @@ body {
 .carousel .img-responsive {
   display: inline-block;
 }
+.carousel-control {
+  color: #d3323a;
+  opacity: 0.7;
+  width: 10%;
+}
+.carousel-control:active, .carousel-control:hover, .carousel-control:focus, .carousel-control:visited {
+  color: #d3323a;
+  opacity: 1;
+}
 .carousel-control-image {
   overflow: hidden;
 }
@@ -42,10 +51,38 @@ body {
   opacity: 0.25;
 }
 
+.carousel-control.left, .carousel-control.right {
+  background: none;
+}
+
+footer {
+  background: #6d8dc6;
+  color: #fff;
+  font-size: 1.2em;
+  margin-bottom: -2%;
+  padding-top: 2%;
+}
+
+footer h5 {
+  font-size: 1.3em;
+  letter-spacing: 0.05em;
+}
+
+footer a {
+  color: #fff;
+  font-weight: bolder;
+}
+
+footer a:hover, footer a:active, footer a:focus, footer a:visited {
+  color: yellow;
+  text-decoration: none;
+}
+
 .jumbotron {
   background: url(../img/jumbotron-lawn.jpg) top center no-repeat;
   display: block;
   height: auto;
+  margin-bottom: 8%;
   max-width: 100%;
   opacity: 0.9;
   padding: 10% 0;
@@ -55,12 +92,22 @@ body {
   color: white;
   font-size: 6.2em;
   font-weight: bolder;
+  letter-spacing: 0.02em;
   text-shadow: 3px 3px 8px #000000;
 }
 
 .jumbotron .btn {
   background: #d3323a;
   border: none;
+  font-size: 2em;
+  margin-top: 6%;
+  opacity: 0.9;
+  padding: 2%;
+}
+
+.jumbotron .btn:hover {
+  color: yellow;
+  opacity: 1;
 }
 
 .links a {
@@ -75,17 +122,26 @@ body {
 }
 .phone {
   color: #6d8dc6;
-  font-size: 2em;
-  margin-top: 10%;
+  font-size: 2.666em;
+  margin-top: 12%;
 }
 
 @media only screen and (max-width: 768px) {
+
+  .flowers {
+    padding-top: 6%;
+  }
 
   .jumbotron h1 {
     font-size: 3em;
   }
 
+  .jumbotron .btn {
+    font-size: 1.666em;
+  }
+
   .phone {
+    margin: 4% 0 10% 2%;
     text-align: left;
   }
 
