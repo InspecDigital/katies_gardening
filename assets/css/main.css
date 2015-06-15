@@ -70,12 +70,18 @@ footer h5 {
 
 footer a {
   color: #fff;
-  font-weight: bolder;
+  font-weight: bold;
 }
 
-footer a:hover, footer a:active, footer a:focus, footer a:visited {
+footer a:hover, footer a:focus {
   color: yellow;
   text-decoration: none;
+}
+
+.inspec {
+  font-family: 'Questrial', 'Arimo', sans-serif;
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
 }
 
 .jumbotron {
