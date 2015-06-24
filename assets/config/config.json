@@ -9,5 +9,8 @@
     "default" : {
       "host" : "/assets/app/lib/wordpress/wp-json/"
     }
-  }
+  },
+  "categories" : [
+    "Contact"
+  ]
 }

@@ -67,15 +67,27 @@ define([
 
       var self = this;
 
-      var terms = this.terms.toJSON();
+      var categories = this.Config.get('categories');
+
+      var posts = [];
 
       var media = this.media.toJSON();
 
       var body;
 
+      for(var i = 0; i < categories.length; i++) {
+
+        posts[categories[i]] = _.map(this.posts.toJSON(), function(post) {
+          return _.find(post.terms.category, function(item) {
+            return item.name === categories[i];
+          });
+        });
+
+      }
+
       media[0].active = true;
 
-      body = mustache.render(mainTemplate, { terms : terms, media : media });
+      body = mustache.render(mainTemplate, { posts : posts, media : media });
 
       var _options = {
         partial : body,
