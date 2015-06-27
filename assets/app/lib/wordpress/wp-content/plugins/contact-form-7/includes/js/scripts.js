@@ -5,11 +5,6 @@
 
 	_wpcf7 = $.extend({ cached: 0 }, _wpcf7);
 
-	$(function() {
-		_wpcf7.supportHtml5 = $.wpcf7SupportHtml5();
-		$('div.wpcf7 > form').wpcf7InitForm();
-	});
-
 	$.fn.wpcf7InitForm = function() {
 		this.ajaxForm({
 			beforeSubmit: function(arr, $form, options) {
@@ -410,5 +405,11 @@
 
 		return features;
 	};
+
+	$(function() {
+		_wpcf7.supportHtml5 = $.wpcf7SupportHtml5();
+		$('div.wpcf7 > form').wpcf7InitForm();
+		console.log('form init');
+	});
 
 })(jQuery);

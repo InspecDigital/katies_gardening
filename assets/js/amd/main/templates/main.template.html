@@ -48,30 +48,24 @@
       </div>
     </div>
   </div>
-
-  <div>
-    {{#terms}}
-      <p>{{name}}</p>
-    {{/terms}}
-  </div>
-</section>
-
-</section>
-
-<section class="contact">
-  <div class="container">
-    <h1>Contact</h1>
-  </div>
 </section>
 
 
-<nav class="navbar navbar-inverse">
-  <div class="container">
-    <div class="row">
-      <h2>We can help</h2>
+
+{{#articles}}
+  <section class="{{{term.slug}}}" id="{{{term.slug}}}">
+    <div class="container">
+      <div class="row">
+        <h1>{{term.name}}</h1>
+      </div>
+      {{#posts}}
+        <div class="row">
+          {{{content}}}
+        </div>
+      {{/posts}}
     </div>
-  </div>
-</nav>
+  </section>
+{{/articles}}
 
 
 <footer>

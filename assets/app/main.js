@@ -21,7 +21,7 @@
       'mustache'                     : 'app/lib/mustache/mustache',
       'require.text'                 : 'app/lib/require_text/text',
       'toastr'                       : 'app/lib/toastr/toastr.min',
-      'underscore'                   : 'app/lib/lodash/dist/lodash.min'
+      'underscore'                   : 'app/lib/lodash/dist/lodash.min',
     },
     shim : {
       'backbone' : {

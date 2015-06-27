@@ -11,14 +11,16 @@ define([
   'backbone',
   'mustache',
   'require.text!../templates/main.template.html',
-  '../plugins/main.prototype'
+  '../plugins/main.prototype',
+  '/assets/app/lib/wordpress/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js'
 ], function(
   $,
   _,
   Backbone,
   mustache,
   mainTemplate,
-  MainPrototype
+  MainPrototype,
+  jqueryForm
 ) {
 
   'use strict';
@@ -69,7 +71,7 @@ define([
 
       var categories = this.Config.get('categories');
 
-      var posts = [];
+      var articles = [];
 
       var media = this.media.toJSON();
 
@@ -77,17 +79,23 @@ define([
 
       for(var i = 0; i < categories.length; i++) {
 
-        posts[categories[i]] = _.map(this.posts.toJSON(), function(post) {
+        articles[i] = {};
+        articles[i].term = this.terms.findWhere({ slug : categories[i] }).toJSON();
+        articles[i].posts = _.map(this.posts.toJSON(), function(post) {
           return _.find(post.terms.category, function(item) {
-            return item.name === categories[i];
-          });
+            return item.slug === categories[i];
+          }) !== undefined ? post : null;
         });
+
+        articles[i].posts = _.reject(articles[i].posts, function(post) { return post === null; });
 
       }
 
+      console.log(articles);
+
       media[0].active = true;
 
-      body = mustache.render(mainTemplate, { posts : posts, media : media });
+      body = mustache.render(mainTemplate, { articles : articles, media : media });
 
       var _options = {
         partial : body,
@@ -99,6 +107,8 @@ define([
 
       this.replaceBody(_options);
 
+      var _wpcf7 = {"loaderUrl":"http:\/\/kgdev.inspecdigital.org\/assets\/app\/lib\/wordpress\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ..."};
+      require(["/assets/app/lib/wordpress/wp-content/plugins/contact-form-7/includes/js/scripts.js"], 'wpcf7Scripts');
       return this;
 
     },
